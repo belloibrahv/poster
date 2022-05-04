@@ -2,6 +2,20 @@ import { useState } from "react";
 import "./App.css";
 
 function Mailer(props) {
+  // button
+  function removeClass(){  
+    myButton.className = myButton.className.replace(new RegExp('(?:^|\\s)loading(?!\\S)'), '');
+}
+
+var myButton = document.getElementById('myButton');
+
+
+myButton.addEventListener("click", function() {
+    myButton.className = myButton.className + ' loading';
+    setTimeout(removeClass, 2000);
+}, false);
+
+
   const [mailerState, setMailerState] = useState({
     email: "",
     message: "",
@@ -64,7 +78,8 @@ function Mailer(props) {
               className="user_details"
               />
           </div>
-          <button>Send</button>
+
+          <button id="myButton" class="button">Send</button>
         </fieldset>
 
       </form>
