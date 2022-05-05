@@ -1,20 +1,19 @@
 import { useState } from "react";
 import "./App.css";
 
-function Mailer(props) {
+function Mailer() {
   // button
   function removeClass(){  
     myButton.className = myButton.className.replace(new RegExp('(?:^|\\s)loading(?!\\S)'), '');
-}
+  }
 
-var myButton = document.getElementById('myButton');
+  var myButton = document.getElementById('myButton');
 
 
-myButton.addEventListener("click", function() {
+  myButton.addEventListener("click", function() {
     myButton.className = myButton.className + ' loading';
     setTimeout(removeClass, 2000);
-}, false);
-
+  }, false);
 
   const [mailerState, setMailerState] = useState({
     email: "",
